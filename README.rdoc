@@ -1,0 +1,37 @@
+= Guard::Prove
+
+Prove guard allows to automatically & intelligently launch Perl tests when
+files are modified.
+
+== Install
+
+Please be sure to have {guard}[http://github.com/guard/guard] installed before
+continue.
+
+TODO: create gem
+
+== Usage
+
+Please read {guard usage doc}[http://github.com/guard/guard#readme]
+
+== Guardfile
+
+    guard 'prove' do
+        watch('.*\.t')
+        watch('.*\.pm')    { "t" }
+    end
+
+== Development
+
+- Source hosted at {GitHub}[http://github.com/maio/guard-prove]
+- Report issues/Questions/Feature requests on {GitHub Issues}[http://github.com/maio/guard-prove/issues]
+
+Pull requests are very welcome! Make sure your patches are well tested. Please
+create a topic branch for every separate change you make.
+
+I would also appreciate code review of a current version from someone
+experienced in Ruby, because this is the first time I'm using it.
+
+== Authors
+
+{Marian Schubert}[http://github.com/maio]
