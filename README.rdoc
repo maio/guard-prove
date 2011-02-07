@@ -8,7 +8,7 @@ files are modified.
 Please be sure to have {guard}[http://github.com/guard/guard] installed before
 continue.
 
-TODO: create gem
+TODO: publish gem
 
 == Usage
 
@@ -17,8 +17,14 @@ Please read {guard usage doc}[http://github.com/guard/guard#readme]
 == Guardfile
 
     guard 'prove' do
-        watch('.*\.t')
-        watch('.*\.pm')    { "t" }
+      # prove modified test file
+      watch(%r{^.*\.t$})
+
+      # prove all files in t directory when some module gets modified
+      watch(%r{^.*\.pm$})    { "t" }
+
+      # prove path/t/file.t when path/file.pm gets modified
+      # watch(%r{^(.*)/([^./]+)\.pm$}) {|m| m[1] + "/t/" + m[2] + ".t"}
     end
 
 == Development

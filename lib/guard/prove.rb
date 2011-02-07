@@ -5,6 +5,8 @@ require 'guard/guard'
 module Guard
   class Prove < Guard
 
+    VERSION = '1.0.0'
+
     def run_on_change(paths)
       paths.uniq!
       paths.each { |path| run_prove(path) }
