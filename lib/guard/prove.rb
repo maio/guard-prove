@@ -7,7 +7,7 @@ module Guard
 
     VERSION = '1.0.1'
 
-    def run_on_changes(paths)
+    def run_on_modifications(paths)
       paths.uniq!
       paths.each { |path| run_prove(path) }
     end
